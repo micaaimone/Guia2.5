@@ -2,7 +2,7 @@ package org.example.model.entities;
 
 import java.time.LocalDateTime;
 
-public class usuariosEntity {
+public class UsuariosEntity {
 
     private int id_usuario;
     private String nombre;
@@ -13,7 +13,7 @@ public class usuariosEntity {
 
 
     //constructor
-    public usuariosEntity(int id_usuario, String nombre, String apellido, String dni, String email, LocalDateTime fechaCreacion) {
+    public UsuariosEntity(int id_usuario, String nombre, String apellido, String dni, String email, LocalDateTime fechaCreacion) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -22,8 +22,16 @@ public class usuariosEntity {
         this.fechaCreacion = fechaCreacion;
     }
 
+    public UsuariosEntity(String nombre, String apellido, String dni, String email, LocalDateTime fechaCreacion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.email = email;
+        this.fechaCreacion = fechaCreacion;
+    }
+
     //constructor vacio
-    public usuariosEntity() {
+    public UsuariosEntity() {
     }
 
     //getters, setters

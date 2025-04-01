@@ -2,7 +2,7 @@ package org.example.model.entities;
 
 import org.example.model.ENUMS.Permiso;
 
-public class credencialesEntity {
+public class CredencialesEntity {
 
     private int id_credencial;
     private int id_usuario;
@@ -11,7 +11,7 @@ public class credencialesEntity {
     private Permiso permiso;
 
     //constructores
-    public credencialesEntity(int id_credencial, int id_usuario, String username, String password, Permiso permiso) {
+    public CredencialesEntity(int id_credencial, int id_usuario, String username, String password, Permiso permiso) {
         this.id_credencial = id_credencial;
         this.id_usuario = id_usuario;
         this.username = username;
@@ -19,7 +19,7 @@ public class credencialesEntity {
         this.permiso = permiso;
     }
 
-    public credencialesEntity() {
+    public CredencialesEntity() {
     }
 
     //getters, setters

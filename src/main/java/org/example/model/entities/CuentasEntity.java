@@ -4,7 +4,7 @@ import org.example.model.ENUMS.tipoCuenta;
 
 import java.time.LocalDateTime;
 
-public class cuentasEntity {
+public class CuentasEntity {
 
     private int id_cuenta;
     private int id_usuario;
@@ -13,14 +13,14 @@ public class cuentasEntity {
 
     //constructores
 
-    public cuentasEntity(int id_cuenta, int id_usuario, tipoCuenta tipo, LocalDateTime fecha_creacion) {
+    public CuentasEntity(int id_cuenta, int id_usuario, tipoCuenta tipo, LocalDateTime fecha_creacion) {
         this.id_cuenta = id_cuenta;
         this.id_usuario = id_usuario;
         this.tipo = tipo;
         this.fecha_creacion = fecha_creacion;
     }
 
-    public cuentasEntity() {
+    public CuentasEntity() {
     }
 
     //getters, setters
