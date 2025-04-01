@@ -1,4 +1,4 @@
-package org.example.interfaces;
+package org.example.repositories.interfaces;
 
 import java.sql.SQLException;
 import java.util.List;
