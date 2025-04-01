@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class ConexionSQLite {
     private static final DataSource dataSource;
-    private static final String URL = "jbdc:sqlite:banco.db";
+    private static final String URL = "jdbc:sqlite:banco.db";
 
     // Bloque estático para configurar HikariCP
     // El bloque estatic se ejecuta una vez al cargar la clase
