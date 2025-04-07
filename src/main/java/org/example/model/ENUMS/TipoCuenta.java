@@ -1,5 +1,5 @@
 package org.example.model.ENUMS;
 
-public enum tipoCuenta {
+public enum TipoCuenta {
     CAJA_AHORRO, CUENTA_CORRIENTE;
 }
