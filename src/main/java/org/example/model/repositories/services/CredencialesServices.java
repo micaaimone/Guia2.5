@@ -1,14 +1,17 @@
 package org.example.model.repositories.services;
 
 import org.example.model.entities.CredencialesEntity;
+import org.example.model.entities.UsuariosEntity;
 import org.example.model.repositories.impl.CredencialesRepository;
 import org.example.model.repositories.impl.CuentasRepository;
 import org.example.repositories.interfaces.IRepository;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class CredencialesServices implements  IRepository<CredencialesEntity> {
+public class CredencialesServices {
     private static CredencialesServices instance;
     private static CredencialesRepository credencialesRepository;
 
@@ -21,23 +24,46 @@ public class CredencialesServices implements  IRepository<CredencialesEntity> {
         return instance;
     }
 
-    @Override
-    public List<CredencialesEntity> findAll() throws SQLException {
-        return List.of();
+
+    public List<CredencialesEntity> mostrarTodos() {
+        List<CredencialesEntity> credenciales = new ArrayList<>();
+
+        try{
+            credenciales = credencialesRepository.findAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return credenciales;
     }
 
-    @Override
-    public void save(CredencialesEntity entity) throws SQLException {
+
+    public void save(CredencialesEntity entity) {
+        try{
+            credencialesRepository.save(entity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    @Override
     public void update(CredencialesEntity entity) throws SQLException {
 
     }
 
-    @Override
     public void delete(int id) throws SQLException {
 
     }
+
+
+    public Optional<CredencialesEntity> inicioSesion(String username, String password){
+        try{
+            return credencialesRepository.inicioSesion(username,password);
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
+
+    //deberia de hacer un metodo de validacion de USERNAME para que no se repita
 }

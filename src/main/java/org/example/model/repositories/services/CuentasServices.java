@@ -6,9 +6,10 @@ import org.example.model.repositories.impl.UsuariosRepository;
 import org.example.repositories.interfaces.IRepository;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-public class CuentasServices implements IRepository<CuentasEntity>{
+public class CuentasServices {
     private static CuentasServices instance;
     private static CuentasRepository cuentasRepository;
 
@@ -21,22 +22,35 @@ public class CuentasServices implements IRepository<CuentasEntity>{
         return instance;
     }
 
-    @Override
-    public List<CuentasEntity> findAll() throws SQLException {
-        return List.of();
+
+    public List<CuentasEntity> mostrarTodos() {
+        List<CuentasEntity> cuentas = new ArrayList<>();
+        try
+        {
+            cuentas = cuentasRepository.findAll();
+        } catch (SQLException e )
+        {
+            e.printStackTrace();
+        }
+        return cuentas;
     }
 
-    @Override
-    public void save(CuentasEntity entity) throws SQLException {
 
+    public void save(CuentasEntity entity) {
+        try{
+            cuentasRepository.save(entity);
+        } catch (SQLException e )
+        {
+            e.printStackTrace();
+        }
     }
 
-    @Override
+
     public void update(CuentasEntity entity) throws SQLException {
 
     }
 
-    @Override
+
     public void delete(int id) throws SQLException {
 
     }
