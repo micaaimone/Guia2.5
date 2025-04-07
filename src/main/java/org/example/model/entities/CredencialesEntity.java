@@ -19,6 +19,13 @@ public class CredencialesEntity {
         this.permiso = permiso;
     }
 
+    public CredencialesEntity(int id_usuario, String username, String password, Permiso permiso) {
+        this.id_usuario = id_usuario;
+        this.username = username;
+        this.password = password;
+        this.permiso = permiso;
+    }
+
     public CredencialesEntity() {
     }
 
